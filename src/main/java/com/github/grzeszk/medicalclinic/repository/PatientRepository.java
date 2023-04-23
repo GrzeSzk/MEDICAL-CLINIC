@@ -4,7 +4,6 @@ import com.github.grzeszk.medicalclinic.domain.Patient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +33,7 @@ public class PatientRepository {
         return patient;
     }
 
-    public Patient updatePatientByEmail(Patient patient, Patient patientEditInfo) {
+    public Patient updatePatient(Patient patient, Patient patientEditInfo) {
         patient.setEmail(patientEditInfo.getEmail());
         patient.setPassword(patientEditInfo.getPassword());
         patient.setBirthday(patientEditInfo.getBirthday());

@@ -5,7 +5,6 @@ import com.github.grzeszk.medicalclinic.exception.IncorrectPatientDataException;
 import com.github.grzeszk.medicalclinic.repository.PatientRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -42,7 +41,7 @@ public class PatientService {
     public Patient updatePatientByEmail(String email, Patient patientEditInfo) {
         Patient patient = patientRepository.getPatientByEmail(email)
                 .orElseThrow(() -> new IncorrectPatientDataException("Patient not found"));
-        return patientRepository.updatePatientByEmail(patient, patientEditInfo);
+        return patientRepository.updatePatient(patient, patientEditInfo);
     }
 
     public Patient updatePatientPassword(String email, String password) {
